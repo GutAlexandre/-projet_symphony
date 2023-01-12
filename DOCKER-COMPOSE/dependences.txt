@@ -1,2 +1,4 @@
 docker 20.10.5+dfsg1
 docker-compose 1.25.0
+mysql 8.0.31
+php8.2
