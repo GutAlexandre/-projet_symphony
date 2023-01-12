@@ -1,16 +1,6 @@
 version: '3'
 
 services:
-  db:
-    image: mysql:8.0.31
-    environment:
-      MYSQL_ROOT_PASSWORD: mysql!
-      MYSQL_DATABASE: mysql
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
-    ports:
-      - "3306:3306"
-
   web:
     image: php8.2-apache
     container_name: php_web
@@ -28,3 +18,19 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
+    links:
+      - db:db
+
+    db:
+      image: mysql:8.0.31
+      volumes:
+        # Volume de la base de données
+        - ./db-data:/var/lib/mysql      
+      environment:
+        MYSQL_ROOT_PASSWORD: mysql!
+        MYSQL_DATABASE: mysql
+        MYSQL_USER: mysql
+        MYSQL_PASSWORD: mysql
+      ports:
+        - "3306:3306"
+

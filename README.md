@@ -15,14 +15,14 @@ Table des matières
 
 ## Comment installer notre TP ?  
 
-<div id='prerequis'/>
-####Prerequis
-
-Pour commencer, nous avons besoin d'installer docker et docker-compose.
-Pour cela il vous faudras avoir un acces admin
-Lors de notre TP, nous avons installer docker 20.10.5+dfsg1 docker-compose 1.25.0 
-En sudo :
-`apt-get install docker docker-compose`
-
-Sinon :
-`sudo apt-get install docker docker-compose`
+<div id='prerequis'/>  
+#### Prerequis  
+  
+Pour commencer, nous avons besoin d'installer docker et docker-compose.  
+Pour cela il vous faudras avoir un acces admin  
+Lors de notre TP, nous avons installer docker 20.10.5+dfsg1 docker-compose 1.25.0   
+En sudo :  
+`apt-get install docker docker-compose`  
+  
+Sinon :  
+`sudo apt-get install docker docker-compose`  
