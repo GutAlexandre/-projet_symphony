@@ -16,9 +16,9 @@ Table des matières
   
 Pour commencer, nous avons besoin d'installer docker et docker-compose.  
 Pour cela il vous faudras avoir un acces admin  
-Lors de notre TP, nous avons installer docker 20.10.5+dfsg1 docker-compose 1.25.0   
+Lors de notre TP, nous avons installer docker 20.10.5+dfsg1 docker-compose 1.25.0 mysql8.031 php8.2`  
 En sudo :  
-`apt-get install docker docker-compose sqlite3 3.40.1 php8.2`  
+`apt-get install docker docker-compose mysql8.031 php8.2`  
   
 Sinon :  
-`sudo apt-get install docker docker-compose sqlite3 3.40.1 php8.2`
+`sudo apt-get install docker docker-compose mysql8.031 php8.2`
