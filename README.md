@@ -4,11 +4,8 @@ Voici le TP de docker qui a pour but de creer un docker compose grace a un docke
 
 *******
 Table des matières  
- 1. [Installation ?](#installation)
- 2. [Pourquoi utiliser le Markdown?](#why)
- 3. [Outils pour le Markdown](#tools)
- 4. [La syntaxe du Markdown](#syntax)
-
+ 1. [Installation](#installation)
+ 2. [Utilisation](#use)
 *******
 
 <div id='installation'/>  
@@ -16,7 +13,6 @@ Table des matières
 ## Comment installer notre TP ?  
 
 <div id='prerequis'/>  
-#### Prerequis  
   
 Pour commencer, nous avons besoin d'installer docker et docker-compose.  
 Pour cela il vous faudras avoir un acces admin  

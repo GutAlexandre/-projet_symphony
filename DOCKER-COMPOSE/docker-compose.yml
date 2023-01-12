@@ -22,7 +22,7 @@ services:
       - db:db
 
     db:
-      image: mysql:8.0.31
+      image: mysql:latest
       volumes:
         # Volume de la base de données
         - ./db-data:/var/lib/mysql      
