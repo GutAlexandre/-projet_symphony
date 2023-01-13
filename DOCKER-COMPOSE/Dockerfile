@@ -1,34 +1,16 @@
 # Image de base
 FROM php:latest
 
-# Dossier de travail pour les commandes suivantes
-WORKDIR /var/www/html
+RUN a2enmod headers deflate expires rewrite 
+EXPOSE 80
 
-# Installation initiale de modules apache et php
-RUN apt install -y apache2 \
-	curl \
-	php \
-	php-common \
-	php-cli \
-	php-fpm \
-	php-json \
-	php-pdo \
-	php-mysql \
-	php-zip \
-	php-gd \
-	php-mbstring \
-	php-curl \
-	php-xml \
-	php-pear \
-	php-bcmath \
-	libapache2-mod-php
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#RUN a2enmod headers deflate expires rewrite
-RUN docker-php-ext-install mysqli
-
-
-EXPOSE 8080
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Redémarrage d'Apache pour prendre en compte ces modifications
-RUN systemctl restart apache2
+RUN service apache2 restart
+
+WORKDIR /var/www/html
 
