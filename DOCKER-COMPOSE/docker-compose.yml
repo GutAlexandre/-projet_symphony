@@ -18,8 +18,6 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
-    links:
-      - mysql
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
@@ -29,19 +27,16 @@ services:
       - "8083:80"
 
   web:
-    image: php:latest
-    container_name: php_web
+    image: nginx:latest
+    container_name: nginx-container    
     ports:
-      # local:container
       - "8081:80"
-    environment:
-      - APACHE_DOCUMENT_ROOT=/var/www/html
-      - COMPOSER_ALLOW_SUPERUSER=1
     volumes:
-      # Volume stockant les fichiers web du projet
-      - ./php/:/var/www/html
-    build:
-      context: .
-      dockerfile: Dockerfile
-    depends_on:
-      - mysql
+      - ./src:/var/www/html
+   
+  php:
+    image: php:7-fpm
+    expose:
+      - 9000
+    volumes:
+      - ./src:/var/www/html
