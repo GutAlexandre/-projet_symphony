@@ -27,16 +27,19 @@ services:
       - "8083:80"
 
   web:
-    image: nginx:latest
-    container_name: nginx-container    
+    image: nginx:1.17
+    container_name: webserver
+    depends_on:
+      - php
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx:/etc/nginx/conf.d/
     ports:
       - "8081:80"
-    volumes:
-      - ./src:/var/www/html
-   
+
   php:
-    image: php:7-fpm
-    expose:
-      - 9000
+    image: php:7.2-fpm
     volumes:
       - ./src:/var/www/html
+      - ./php:/usr/local/etc/php/php.ini
+
